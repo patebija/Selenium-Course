@@ -12,11 +12,10 @@ public class FirstTest {
     @Test
     public void OpenBrowser()  {
         WebDriver driver;
-        System.setProperty("webdriver.chrome.driver", "/usr/bin/google-chrome");
+        System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--headless", "--disable-gpu","--remote-debugging-port=9222",
-                "--ignore-certificate-errors","--disable-extensions","--no-sandbox",
-                "--disable-dev-shm-usage");
+        options.addArguments("headless");
+        options.addArguments("disable-gpu");
         driver = new ChromeDriver(options);
         driver.get("https://www.google.com");
         System.out.println(driver.getTitle());
